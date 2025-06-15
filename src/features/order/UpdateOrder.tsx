@@ -15,6 +15,9 @@ function UpdateOrder({ order }: UpdateOrderProps) {
 }
 
 export async function action({ params }: ActionFunctionArgs) {
+  if (!params.orderId) {
+    throw new Error("Order ID is missing");
+  }
   const data = { priority: true };
   await updateOrder(params.orderId, data);
   return null;

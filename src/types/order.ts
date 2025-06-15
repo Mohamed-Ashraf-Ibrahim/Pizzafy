@@ -7,7 +7,7 @@ export type OrderItemProps = {
 };
 
 export type Order = {
-  id: string;
+  id: string | undefined;
   priority: boolean;
 };
 
@@ -16,8 +16,8 @@ export type UpdateOrderProps = {
 };
 
 export type OrderSummary = {
-  id: string;
-  status: string;
+  id: string | undefined;
+  status: string | undefined;
   priority: boolean;
   priorityPrice: number;
   orderPrice: number;
